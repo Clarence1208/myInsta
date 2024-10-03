@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+<!--   round image with profile picture-->
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/story_header_image"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:src="@drawable/default_avatar_icon_of_social_media_user_vector"
+        android:scaleType="centerCrop"
+        app:shapeAppearanceOverlay="@style/RoundedImage"
+        app:strokeWidth="6dp" />
+
+
+<!--   name of the user-->
+    <TextView
+        android:id="@+id/story_header_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:maxWidth="75dp"
+        android:text="John Doe"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"/>
+
+
+
+
+
+
+</LinearLayout>
