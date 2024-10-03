@@ -2,49 +2,81 @@
 <MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:motion="http://schemas.android.com/apk/res-auto">
 
-<!--    <Transition-->
-<!--        motion:constraintSetStart="@id/start"-->
-<!--        motion:constraintSetEnd="@id/end"-->
-<!--        motion:duration="500">-->
+    <Transition
+        motion:constraintSetStart="@id/start"
+        motion:constraintSetEnd="@id/end"
+        motion:duration="500">
 
-<!--        <OnSwipe-->
-<!--            motion:dragDirection="dragDown"-->
-<!--            motion:touchAnchorId="@id/menu_btn"-->
-<!--            motion:touchAnchorSide="top" />-->
-<!--    </Transition>-->
+        <!-- This handles the scroll gesture that triggers the transition -->
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/story_header_rv"
+            motion:touchAnchorSide="bottom"
+            motion:maxAcceleration="0.1" />
+    </Transition>
 
-<!--    <ConstraintSet android:id="@+id/start">-->
-<!--        <Constraint-->
-<!--            android:id="@id/menu_btn"-->
-<!--            motion:layout_constraintTop_toTopOf="parent"-->
-<!--            motion:layout_constraintStart_toStartOf="parent" />-->
+    <!-- Starting ConstraintSet where views are visible -->
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/menu_btn"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
 
-<!--        <Constraint-->
-<!--            android:id="@id/my_insta_tv"-->
-<!--            motion:layout_constraintTop_toTopOf="parent"-->
-<!--            motion:layout_constraintStart_toStartOf="parent"-->
-<!--            motion:layout_constraintEnd_toEndOf="parent" />-->
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
 
-<!--        <Constraint-->
-<!--            android:id="@id/story_header_rv"-->
-<!--            motion:layout_constraintTop_toBottomOf="@id/menu_btn" />-->
-<!--    </ConstraintSet>-->
+        <Constraint
+            android:id="@id/my_insta_tv"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textStyle="bold"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            />
 
-<!--    <ConstraintSet android:id="@+id/end">-->
-<!--        <Constraint-->
-<!--            android:id="@id/menu_btn"-->
-<!--            motion:layout_constraintTop_toTopOf="parent"-->
-<!--            motion:layout_constraintStart_toStartOf="parent" />-->
+        <Constraint
+            android:id="@id/story_header_rv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            motion:layout_constraintTop_toBottomOf="@+id/menu_btn"/>
 
-<!--        <Constraint-->
-<!--            android:id="@id/my_insta_tv"-->
-<!--            motion:layout_constraintTop_toTopOf="parent"-->
-<!--            motion:layout_constraintStart_toStartOf="parent"-->
-<!--            motion:layout_constraintEnd_toEndOf="parent" />-->
+        <Constraint
+            android:id="@id/post_rv"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            motion:layout_constraintTop_toBottomOf="@id/story_header_rv"
+            />
+    </ConstraintSet>
 
-<!--        <Constraint-->
-<!--            android:id="@id/story_header_rv"-->
-<!--            motion:layout_constraintTop_toTopOf="parent" />-->
-<!--    </ConstraintSet>-->
+    <!-- Ending ConstraintSet where the second RecyclerView takes full height -->
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/menu_btn"
+            motion:layout_constraintBottom_toTopOf="@id/story_header_rv"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+
+        <Constraint
+            android:id="@id/my_insta_tv"
+            motion:layout_constraintBottom_toTopOf="@id/story_header_rv"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+
+        <Constraint
+            android:id="@id/story_header_rv"
+            android:layout_width="match_parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/post_rv"
+             />
+
+        <Constraint
+            android:id="@id/post_rv"
+            android:layout_height="match_parent"
+            motion:layout_constraintTop_toTopOf="parent"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            android:visibility="visible" />
+    </ConstraintSet>
 
 </MotionScene>
