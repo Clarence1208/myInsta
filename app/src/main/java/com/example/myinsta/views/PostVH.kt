@@ -17,5 +17,5 @@ class PostVH(val itemView: View) : RecyclerView.ViewHolder(itemView) {
     val commentTv: TextView = itemView.findViewById(R.id.comment_tv)
     val shareTv: TextView = itemView.findViewById(R.id.share_tv)
     val descriptionTv: TextView = itemView.findViewById(R.id.post_description_tv)
-    val userInfoCard: CardView = itemView.findViewById(R.id.profile_card_view)
+    val userInfoCard: View = itemView.findViewById(R.id.blurred_background)
 }

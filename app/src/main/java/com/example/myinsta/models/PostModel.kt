@@ -1,6 +1,7 @@
 package com.example.myinsta.models
 
 import android.net.Uri
+import com.example.myinsta.enums.PostType
 
 data class PostModel (
     val name: String,
@@ -11,6 +12,7 @@ data class PostModel (
     val postHashTags: String,
     val postLike: Int,
     val postComment: Int,
-    val postShare: Int
+    val postShare: Int,
+    val postType: PostType
 ) {
 }

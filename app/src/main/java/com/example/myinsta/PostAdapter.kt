@@ -2,22 +2,16 @@ package com.example.myinsta
 
 import android.graphics.RenderEffect
 import android.graphics.Shader
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.load.DataSource
 import com.example.myinsta.models.PostModel
 import com.example.myinsta.views.PostVH
-import android.graphics.drawable.Drawable
-import android.os.Build
-import com.bumptech.glide.load.engine.GlideException
-import com.bumptech.glide.request.RequestListener
-import com.bumptech.glide.request.target.Target
-import com.google.android.material.card.MaterialCardView
 
 
-class PostAdapter (val posts: List<PostModel>): RecyclerView.Adapter<PostVH>() {
+class PostAdapter(val posts: List<PostModel>) : RecyclerView.Adapter<PostVH>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostVH {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.post_layout, parent, false)
         return PostVH(view)
@@ -71,7 +65,13 @@ class PostAdapter (val posts: List<PostModel>): RecyclerView.Adapter<PostVH>() {
 
         // Add blur effect to the card
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            holder.userInfoCard.setRenderEffect(RenderEffect.createBlurEffect(20f, 20f, Shader.TileMode.CLAMP))
+            holder.userInfoCard.setRenderEffect(
+                RenderEffect.createBlurEffect(
+                    20f,
+                    20f,
+                    Shader.TileMode.CLAMP
+                )
+            )
         }
     }
 

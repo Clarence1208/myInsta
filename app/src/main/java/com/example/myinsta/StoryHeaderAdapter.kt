@@ -3,6 +3,7 @@ package com.example.myinsta
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.myinsta.models.HeaderStoryModel
 import com.example.myinsta.views.StoryHeaderVH
 
@@ -20,6 +21,11 @@ class StoryHeaderAdapter (val headers: List<HeaderStoryModel>): RecyclerView.Ada
         val header = this.headers[position]
 
         holder.nameTv.text = header.name
-//        holder.imageTv.text = header.image
+
+        Glide.with(holder.imageTv.context)
+            .load(header.image)
+            .skipMemoryCache(true)
+            .diskCacheStrategy(com.bumptech.glide.load.engine.DiskCacheStrategy.NONE)
+            .into(holder.imageTv)
     }
 }

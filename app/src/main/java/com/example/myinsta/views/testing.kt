@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.myinsta.PostAdapter
 import com.example.myinsta.R
+import com.example.myinsta.enums.PostType.*
 import com.example.myinsta.models.HeaderStoryModel
 import com.example.myinsta.models.PostModel
 
@@ -31,7 +32,8 @@ class testing : AppCompatActivity() {
             "#dkdkdk, #djdjdj, #djdjdj",
             32,
             333,
-            12
+            12,
+            IMAGE
         ),
         PostModel(
             "david",
@@ -42,7 +44,8 @@ class testing : AppCompatActivity() {
             "#dkdkdk, #djdjdj, #djdjdj",
             32,
             333,
-            12
+            12,
+            IMAGE
         ),
 
         PostModel(
@@ -54,7 +57,8 @@ class testing : AppCompatActivity() {
             "#dkdkdk, #djdjdj, #djdjdj",
             32,
             333,
-            12
+            12,
+            IMAGE
         ),
 
         PostModel(
@@ -66,7 +70,8 @@ class testing : AppCompatActivity() {
             "#dkdkdk, #djdjdj, #djdjdj",
             32,
             333,
-            12
+            12,
+            IMAGE
         ),
 
         PostModel(
@@ -78,7 +83,8 @@ class testing : AppCompatActivity() {
             "#dkdkdk, #djdjdj, #djdjdj",
             32,
             333,
-            12
+            12,
+            IMAGE
         ),
 
         )
